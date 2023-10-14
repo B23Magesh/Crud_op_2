@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Message</title>
+</head>
+<body>
+    <h1 id="msg_id">created successfully</h1>
+    <a href="{% url 'Home' %}" id="back">Back to Insertion</a>
+
+    <table>
+        <tr>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Age</td>
+        </tr>
+        {%for i in form %}
+        <tr>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
